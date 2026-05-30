@@ -112,7 +112,7 @@ Administrators can review user accounts, monitor registered users, search record
 
 The Super Admin has complete system visibility and can search user records, review account information, and manage access privileges across the platform.
 
-![Super Admin Search](screenshots/05-super-admin-search.png)
+![Super Admin Search](screenshots/Super-Admin-Dashboard-with-User-Search.png)
 
 ---
 
