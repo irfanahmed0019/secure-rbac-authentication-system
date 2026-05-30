@@ -1,124 +1,86 @@
 # 🔐 Secure RBAC Authentication System
 
-A secure Role-Based Access Control (RBAC) authentication system built using Python, Streamlit, SQLite, and bcrypt. This project demonstrates secure user authentication, password encryption, role-based authorization, and administrative user management through an interactive web interface.
+A secure Role-Based Access Control (RBAC) authentication system built with **Python, Streamlit, SQLite, and bcrypt**.
+
+This project demonstrates secure user authentication, password hashing, role-based authorization, account management, and administrative controls through separate dashboards for Users, Admins, and Super Admins.
 
 ---
 
-## 📖 Overview
+## 🚀 Features
 
-Managing user access is a critical part of modern applications. This project implements a complete authentication and authorization workflow where users are assigned different roles and permissions.
+### Authentication
+- User Registration
+- Secure Login System
+- Password Confirmation Validation
+- Password Strength Checking
+- bcrypt Password Hashing
+- Session-Based Authentication
 
-The system supports three access levels:
+### Role-Based Access Control (RBAC)
+- User Role
+- Admin Role
+- Super Admin Role
+- Protected Dashboard Access
+- Permission-Based Functionality
 
-- **User** – Can view only their own account information.
-- **Admin** – Can manage users and monitor account data.
-- **Super Admin** – Has full system control, including role management and account administration.
+### Administration
+- User Search
+- User Filtering
+- User Promotion
+- User Demotion
+- User Deletion
+- User Database Management
 
-Passwords are securely hashed using **bcrypt**, and all user information is stored in an **SQLite** database.
-
----
-
-## ✨ Features
-
-### Authentication & Security
-- Secure user registration
-- Secure login system
-- Password hashing using bcrypt
-- Password strength validation
-- Session-based authentication
-- Protected role-based access
-
-### User Features
-- Personal dashboard
-- View account information
-- Secure sign out
-
-### Admin Features
-- View registered users
-- Search users by username or email
-- Filter users by role
-- Remove user accounts
-
-### Super Admin Features
-- View all users
-- Promote users to Admin
-- Demote Admins to Users
-- Remove accounts
-- Full RBAC management
-
-### Database Features
-- SQLite database integration
-- Unique usernames and emails
-- Role-based user records
-- Automatic account creation timestamps
+### Database
+- SQLite Database Storage
+- Unique Username Validation
+- Unique Email Validation
+- Secure Password Storage
+- Account Creation Timestamps
 
 ---
 
-## 🛠️ Technology Stack
+# 🛠 Technology Stack
 
 | Technology | Purpose |
 |------------|----------|
 | Python | Backend Logic |
-| Streamlit | Web Interface |
+| Streamlit | User Interface |
 | SQLite | Database |
 | bcrypt | Password Hashing |
-| Pandas | Data Management |
+| Pandas | Data Handling |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 secure-rbac-authentication-system/
 │
-├── screenshots/
-│   ├── 01-login-interface.png
-│   ├── 02-user-registration.png
-│   ├── 03-user-dashboard.png
-│   ├── 04-admin-dashboard.png
-│   ├── 05-super-admin-dashboard-with-search.png
-│   ├── 06-role-promotion-and-demotion.png
-│   ├── 07-user-removal-management.png
-│   └── 08-sqlite-user-database.png
-│
 ├── app.py
 ├── requirements.txt
-└── README.md
+├── README.md
+│
+└── screenshots/
+    ├── 01-login.png
+    ├── 02-registration.png
+    ├── 03-user-dashboard.png
+    ├── 04-admin-dashboard.png
+    ├── 05-super-admin-search.png
+    ├── 06-role-management.png
+    ├── 07-user-deletion.png
+    └── 08-database.png
 ```
 
 ---
 
-## 🚀 Installation
-
-### Clone Repository
-
-```bash
-git clone https://github.com/yourusername/secure-rbac-authentication-system.git
-
-cd secure-rbac-authentication-system
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run Application
-
-```bash
-streamlit run app.py
-```
-
----
-
-# 📸 Application Screenshots
+# 📸 Project Screenshots
 
 ## 1. Secure Login Interface
 
 The login page verifies user credentials and securely authenticates registered users before granting access to the system.
 
-![Secure Login Interface](screenshots/01-login-interface.png)
+![Login](screenshots/01-login.png)
 
 ---
 
@@ -126,7 +88,7 @@ The login page verifies user credentials and securely authenticates registered u
 
 New users can create accounts using unique usernames and email addresses. Password strength is validated before registration, and passwords are securely hashed using bcrypt.
 
-![User Registration](screenshots/02-user-registration.png)
+![Registration](screenshots/02-registration.png)
 
 ---
 
@@ -140,7 +102,7 @@ Standard users can access their personal dashboard and view their account inform
 
 ## 4. Admin Dashboard
 
-Administrators can review user accounts, monitor system users, and access management features unavailable to standard users.
+Administrators can review user accounts, monitor registered users, search records, and access management features unavailable to standard users.
 
 ![Admin Dashboard](screenshots/04-admin-dashboard.png)
 
@@ -148,91 +110,107 @@ Administrators can review user accounts, monitor system users, and access manage
 
 ## 5. Super Admin Dashboard with User Search
 
-The Super Admin has complete system visibility and can search user records, review account information, and manage access privileges.
+The Super Admin has complete system visibility and can search user records, review account information, and manage access privileges across the platform.
 
-![Super Admin Dashboard](screenshots/05-super-admin-dashboard-with-search.png)
+![Super Admin Search](screenshots/05-super-admin-search.png)
 
 ---
 
 ## 6. Role Promotion and Demotion Controls
 
-The system allows the Super Admin to promote users to administrator roles or demote administrators back to standard user status.
+The Super Admin can promote standard users to administrators and demote administrators back to regular users through role management controls.
 
-![Role Management](screenshots/06-role-promotion-and-demotion.png)
+![Role Management](screenshots/06-role-management.png)
 
 ---
 
-## 7. User Removal Management
+## 7. User Deletion Management
 
-Authorized administrators can remove selected user accounts from the system through a controlled management interface.
+Administrative users can remove selected accounts from the system while maintaining role-based restrictions and access controls.
 
-![User Removal](screenshots/07-user-removal-management.png)
+![User Deletion](screenshots/07-user-deletion.png)
 
 ---
 
 ## 8. SQLite User Database with RBAC Roles
 
-User information is stored in an SQLite database with encrypted passwords, assigned roles, and account creation timestamps.
+User credentials, account metadata, timestamps, and role assignments are securely stored within a SQLite database.
 
-![SQLite Database](screenshots/08-sqlite-user-database.png)
-
----
-
-## 🔒 Security Implementation
-
-This project follows several security practices:
-
-- Password hashing using bcrypt
-- No plaintext password storage
-- Unique username enforcement
-- Unique email enforcement
-- Role-based authorization
-- Session-controlled access
-- Administrative privilege separation
+![Database](screenshots/08-database.png)
 
 ---
 
-## 🎯 Learning Outcomes
+# 🔒 Security Features
 
-This project helped demonstrate practical understanding of:
+- bcrypt Password Hashing
+- Role-Based Authorization
+- Session Authentication
+- Unique Username Enforcement
+- Unique Email Enforcement
+- Secure Password Storage
+- Permission-Based Dashboard Access
+- Account Management Controls
+
+---
+
+# ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/irfanahmed0019/secure-rbac-authentication-system.git
+```
+
+Move into the project directory:
+
+```bash
+cd secure-rbac-authentication-system
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
+streamlit run app.py
+```
+
+---
+
+# 📋 Requirements
+
+```text
+streamlit
+bcrypt
+pandas
+```
+
+---
+
+# 🎯 Learning Outcomes
+
+This project demonstrates practical experience with:
 
 - Authentication Systems
-- Authorization and RBAC
-- Database Design
-- Password Security
+- Authorization & RBAC
+- Secure Password Storage
+- SQLite Database Design
 - User Management Systems
-- Secure Application Development
-- Python Backend Development
-- Streamlit Application Development
+- Python Application Development
+- Streamlit Dashboard Development
+- Security Best Practices
 
 ---
 
-## 🔮 Future Improvements
-
-Potential enhancements include:
-
-- Multi-Factor Authentication (MFA)
-- Password Reset Functionality
-- Email Verification
-- PostgreSQL Integration
-- Activity Logging
-- Audit Trails
-- Account Lockout Protection
-- JWT-Based Authentication
-- Docker Deployment
-
----
-
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Irfan Ahammad**
 
-Computer Engineering Student
+Aspiring AI Engineer | Python Developer | Cybersecurity & AI Enthusiast
 
-GitHub: https://github.com/irfanahmed0019
-
----
-
-## ⭐ Support
-
-If you found this project useful, consider giving the repository a star.
+GitHub:
+https://github.com/irfanahmed0019
