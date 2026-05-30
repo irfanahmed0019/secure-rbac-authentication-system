@@ -225,7 +225,7 @@ Potential enhancements include:
 
 ## 👨‍💻 Author
 
-**Irfan Ahmed**
+**Irfan Ahammad**
 
 Computer Engineering Student
 
